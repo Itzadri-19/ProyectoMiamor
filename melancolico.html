@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melancólico</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #555555;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px; /* Bordes redondeados */
+            background: linear-gradient(to right, #0602f3, #00d1ff); /* Degradado atractivo */
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.05); /* Efecto de hover */
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px; /* Espacio entre las imágenes */
+            padding: 20px;
+        }
+        .image-container img {
+            width: 100%; /* Ajusta el tamaño de las imágenes para llenar el contenedor */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            cursor: pointer; /* Cambia el cursor para indicar que se puede hacer clic */
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+        .text-preview {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto; /* Permite el desplazamiento si el contenido es demasiado largo */
+            height: 150px; /* Altura fija para la ventana de texto */
+            color: #e0e0e0; /* Color de texto más claro */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <!-- Añade tus imágenes aquí -->
+        <img src="images/foto1.jpg" alt="Foto 1" onclick="openFullscreen(this)">
+        <img src="images/foto2.jpg" alt="Foto 2" onclick="openFullscreen(this)">
+        <img src="images/foto3.jpg" alt="Foto 3" onclick="openFullscreen(this)">
+        <img src="images/foto4.jpg" alt="Foto 4" onclick="openFullscreen(this)">
+        <img src="images/foto5.jpg" alt="Foto 5" onclick="openFullscreen(this)">
+        <img src="images/foto6.jpg" alt="Foto 6" onclick="openFullscreen(this)">
+        <img src="images/foto7.jpg" alt="Foto 7" onclick="openFullscreen(this)">
+        <img src="images/foto8.PNG" alt="Foto 8" onclick="openFullscreen(this)">
+        <img src="images/foto9.jpg" alt="Foto 9" onclick="openFullscreen(this)">
+        <img src="images/foto10.jpg" alt="Foto 10" onclick="openFullscreen(this)">
+    </div>
+
+    
+    <a href="Mi amor.docx" download>
+        <button>Descargar archivo Word</button>
+    </a>
+
+    <script>
+        var audio = new Audio("music/La OrejadeVanGoghJueves.mp3");
+        var musicPlayed = false; // Variable para controlar si la música ya ha sido activada
+
+        function openFullscreen(img) {
+            // Si la música no ha sido activada, la activamos
+            if (!musicPlayed) {
+                audio.play(); // Reproduce la música
+                musicPlayed = true; // Marca que la música ha sido activada
+            }
+
+            // Crea un nuevo elemento de imagen
+            var fullScreenImg = document.createElement("img");
+            fullScreenImg.src = img.src; // Usa la misma fuente que la imagen original
+            fullScreenImg.style.width = "100%"; // Ajusta el ancho
+            fullScreenImg.style.height = "100%"; // Ajusta la altura
+            fullScreenImg.style.position = "fixed"; // Posicionamiento fijo
+            fullScreenImg.style.top = "0"; // Coloca en la parte superior
+            fullScreenImg.style.left = "0"; // Coloca en la parte izquierda
+            fullScreenImg.style.objectFit = "contain"; // Mantiene la proporción
+            fullScreenImg.style.zIndex = "9999"; // Asegúrate de que esté por encima de otros elementos
+            fullScreenImg.style.cursor = "pointer"; // Cambia el cursor para indicar que se puede cerrar
+
+            // Elimina cualquier imagen anterior
+            var existingImg = document.getElementById("fullScreenImg");
+            if (existingImg) {
+                existingImg.remove();
+            }
+
+            // Añade la imagen al body
+            document.body.appendChild(fullScreenImg);
+
+            // Registra un evento de clic para cerrar
+            fullScreenImg.addEventListener("click", function() {
+                fullScreenImg.remove(); // Elimina la imagen
+            });
+
+            fullScreenImg.id = "fullScreenImg"; // Agrega un id para poder eliminarlo luego
+        }
+    </script>
+</body>
+</html>
