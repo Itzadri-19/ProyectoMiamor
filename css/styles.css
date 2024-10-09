@@ -1,0 +1,92 @@
+/* Estilos generales */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex; /* Usamos flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    background-size: cover; /* Asegúrate de que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-image: url('../fondo.png'); /* Cambia la ruta según donde esté la imagen */
+}
+
+/* Contenedor de botones con fondo oscuro y transparencia */
+.button-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+    padding: 40px; /* Espaciado interno */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra */
+}
+
+/* Estilo del título principal */
+h1 {
+    color: white; /* Color del texto */
+    font-size: 48px; /* Tamaño del texto */
+    margin-bottom: 30px; /* Margen inferior */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+}
+
+/* Estilo de los botones gráficos */
+button {
+    font-size: 24px; /* Tamaño del texto en los botones */
+    padding: 20px 40px; /* Espaciado interno */
+    margin: 20px; /* Margen entre botones */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border: none; /* Sin borde */
+    border-radius: 50px; /* Bordes redondeados */
+    color: white; /* Color del texto */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transición para hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
+}
+
+/* Estilo botón melancólico */
+#melancolico {
+    background-color: #6c757d; /* Color gris melancólico */
+    background-image: linear-gradient(to bottom right, #6c757d, #343a40); /* Degradado */
+}
+
+#melancolico:hover {
+    transform: scale(1.05); /* Efecto al pasar el ratón */
+    background-color: #495057; /* Color de fondo en hover */
+}
+
+/* Estilo botón animar */
+#animar {
+    background-color: #28a745; /* Color verde vibrante */
+    background-image: linear-gradient(to bottom right, #28a745, #218838); /* Degradado */
+}
+
+#animar:hover {
+    transform: scale(1.05); /* Efecto al pasar el ratón */
+    background-color: #218838; /* Color de fondo en hover */
+}
+
+/* Estilo específico para el texto en páginas de opciones */
+p {
+    font-size: 28px; /* Tamaño del texto */
+    color: white; /* Color del texto */
+    margin-bottom: 30px; /* Margen inferior */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Sombra del texto */
+}
+
+/* Botón de reproducción de música */
+#playButton {
+    background-color: #007bff; /* Azul para reproducir */
+    background-image: linear-gradient(to bottom right, #007bff, #0056b3); /* Degradado */
+    color: white; /* Color del texto */
+    padding: 15px 30px; /* Espaciado interno */
+    font-size: 20px; /* Tamaño del texto */
+    border-radius: 50px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transición para hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
+}
+
+#playButton:hover {
+    transform: scale(1.05); /* Efecto al pasar el ratón */
+    background-color: #0056b3; /* Color de fondo en hover */
+}
